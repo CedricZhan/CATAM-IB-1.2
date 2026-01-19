@@ -35,7 +35,7 @@ def growthrate_estimaton(Y,x,n,h):
         y = y_exact(x_show)
         error.append(abs(Y - y))
         if len(error)!=1:
-            rate.append((np.log(error[-1])-np.log(error[-2]))/0.6)
+            rate.append((np.log(error[-1])-np.log(error[-2]))/h)
 
     return rate
 
@@ -56,3 +56,5 @@ ys=[]
 for k in range(16):
     xs.append(k)
     (En_xn04(2**k))
+
+print(growthrate_estimaton(0,0,20,0.85))
